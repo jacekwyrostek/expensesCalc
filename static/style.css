@@ -1,0 +1,15 @@
+body{
+  margin-left: 8%;
+  margin-right: 8%;
+  background-color: var(--background);
+  font-family: georgia;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}

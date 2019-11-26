@@ -1,0 +1,22 @@
+{%extends 'main.html'%}
+
+{% block title %} Expenses {% endblock %}
+
+{% block body %}
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Cost</th>
+  </tr>
+  {%for expenses in expenses%}
+    <tr>
+      <td>{{expenses.date}}</td>
+      <td>{{expenses.category}}</td>
+      <td>{{expenses.description}}</td>
+      <td>{{expenses.cost}}</td>
+    </tr>
+  {%endfor%}
+{% endblock %}

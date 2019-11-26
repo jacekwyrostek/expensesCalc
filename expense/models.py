@@ -7,3 +7,5 @@ class Expense(models.Model):
     description=models.CharField(verbose_name=u'Description:', max_length=50)
     cost=models.DecimalField(verbose_name=u'Cost:', max_digits=5, decimal_places=2)
     date=models.DateField(verbose_name=u"Date:")
+    class Meta:
+        ordering = ['date']
