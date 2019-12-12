@@ -8,7 +8,7 @@ from expense.choices import *
 class ExpenseForm(forms.ModelForm):
     class Meta:
         model = Expense
-        fields=['category', 'description', 'date']
+        fields=['category', 'description', 'cost']
         widgets = {
             'date': DatePickerInput(),
         }

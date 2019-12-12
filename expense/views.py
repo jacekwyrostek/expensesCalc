@@ -8,9 +8,22 @@ from .forms import *
 
 # Create your views here.
 def monthExpense(request):
-    day=datetime.datetime.today().month
-    expenses=Expense.objects.filter(date__month=day)
+    day=datetime.datetime.today()
+    month=day.month
+    expenses=Expense.objects.filter(date__month=month)
     context={
     'expenses':expenses,
+    'day':day,
     }
     return render(request, 'expenses.html', context)
+
+def newExpense(request):
+    form=ExpenseForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect(monthExpense)
+    context={
+    'form':form
+    }
+    return render(request, 'newExpense.html', context)

@@ -25,4 +25,6 @@ from expense.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('expenses/', monthExpense, name='expenses'),
+    path('newExpense/', newExpense, name='newExpense'),
+
 ]

@@ -3,7 +3,8 @@
 {% block title %} Expenses {% endblock %}
 
 {% block body %}
-
+<h1>{{day|date:'E Y'}}</h1>
+<a href="{% url 'newExpense' %}">Add Expense</a>
 <table>
   <tr>
     <th>Date</th>
@@ -13,7 +14,7 @@
   </tr>
   {%for expenses in expenses%}
     <tr>
-      <td>{{expenses.date}}</td>
+      <td>{{expenses.date|date:'d E Y'}}</td>
       <td>{{expenses.category}}</td>
       <td>{{expenses.description}}</td>
       <td>{{expenses.cost}}</td>
